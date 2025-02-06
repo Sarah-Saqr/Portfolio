@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #0a192f; /* Navy blue background */
+        color: #ccd6f6; /* Light gray text */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background: #0a192f; /* Navy blue */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #64ffda; /* Teal accent */
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav ul li a {
+        color: #ccd6f6; /* Light gray */
+        font-weight: 500;
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #64ffda; /* Teal accent */
+        transform: translateY(-2px);
+      }
+
+      /* Smooth Scroll Animation */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Hero Section */
+      #hero {
+        background: url("hero-bg.jpg") center/cover no-repeat;
+        padding: 200px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 25, 47, 0.8); /* Dark overlay */
+      }
+
+      #hero h2 {
+        font-size: 3.5rem;
+        color: #64ffda; /* Teal accent */
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      #hero p {
+        font-size: 1.3rem;
+        color: #8892b0; /* Lighter gray */
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Sections */
+      section {
+        padding: 80px 20px; /* Adjusted padding */
+        text-align: center;
+        border-bottom: 2px solid #112240; /* Darker navy blue */
+      }
+
+      section h3 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #64ffda; /* Teal accent */
+      }
+
+      section p {
+        font-size: 1.1rem;
+        color: #8892b0; /* Lighter gray */
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Skills & Tech Stack */
+      #skills,
+      #tech-stack {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 50px 20px;
+        background: #112240; /* Darker navy blue */
+      }
+
+      .skill,
+      .tech-item {
+        background: #233554; /* Dark blue */
+        color: #64ffda; /* Teal accent */
+        padding: 15px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 150px; /* Fixed width */
+        height: 50px; /* Fixed height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .skill:hover,
+      .tech-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3); /* Teal shadow */
+      }
+
+      /* Projects */
+      .project {
+        background: #112240; /* Darker navy blue */
+        padding: 30px;
+        margin: 20px auto;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3); /* Teal shadow */
+      }
+
+      .project h4 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #64ffda; /* Teal accent */
+      }
+
+      .project a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #64ffda; /* Teal accent */
+        color: #0a192f; /* Navy blue */
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background 0.3s;
+      }
+
+      .project a:hover {
+        background: #52d1b2; /* Darker teal */
+      }
+
+      /* Testimonials */
+      .testimonial {
+        background: #112240; /* Darker navy blue */
+        padding: 25px;
+        border-radius: 10px;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 600px;
+        text-align: left;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .testimonial:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3); /* Teal shadow */
+      }
+
+      .testimonial p {
+        font-style: italic;
+        color: #8892b0; /* Lighter gray */
+      }
+
+      .testimonial strong {
+        display: block;
+        margin-top: 10px;
+        color: #64ffda; /* Teal accent */
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: #112240; /* Darker navy blue */
+        color: #8892b0; /* Lighter gray */
+      }
+
+      footer a {
+        color: #64ffda; /* Teal accent */
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      footer a:hover {
+        color: #52d1b2; /* Darker teal */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        #hero h2 {
+          font-size: 2.5rem;
+        }
+
+        #hero p {
+          font-size: 1.1rem;
+        }
+
+        section {
+          padding: 60px 20px;
+        }
+
+        section h3 {
+          font-size: 2rem;
+        }
+
+        .skill,
+        .tech-item {
+          width: 120px; /* Adjusted for smaller screens */
+          height: 50px; /* Keep height consistent */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#tech-stack">Tech Stack</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <h2>UI/UX Designer</h2>
+      <p>Crafting intuitive and beautiful digital experiences.</p>
+    </section>
+
+    <section id="about">
+      <h3>About Me</h3>
+      <p>
+        Hi, I'm Sarah Saqr, a passionate UI/UX designer with over 1 years of
+        experience in creating user-centered designs. I specialize in designing
+        modern, responsive, and accessible interfaces that deliver seamless user
+        experiences. My goal is to bridge the gap between functionality and
+        aesthetics, ensuring every design solves real-world problems.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h3>Skills</h3>
+      <div class="skill">UI/UX Design</div>
+      <div class="skill">Wireframing</div>
+      <div class="skill">Prototyping</div>
+      <div class="skill">User Research</div>
+      <div class="skill">Interaction Design</div>
+      <div class="skill">Figma</div>
+      <div class="skill">Sketch</div>
+    </section>
+
+    <section id="tech-stack">
+      <h3>Tech Stack</h3>
+      <div class="tech-item">Figma</div>
+      <div class="tech-item">Sketch</div>
+      <div class="tech-item">ProtoPie</div>
+      <div class="tech-item">ProtoPie</div>
+    </section>
+
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="project">
+        <h4>E-Commerce Redesign</h4>
+        <p>
+          Redesigned the user interface and improved the user experience for a
+          leading e-commerce platform, resulting in a 30% increase in user
+          engagement.
+        </p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project">
+        <h4>Mobile Banking App</h4>
+        <p>
+          Designed a mobile banking app with a focus on simplicity and security,
+          making financial transactions easier for users.
+        </p>
+        <a href="#">View Project</a>
+      </div>
+    </section>
+    <section id="contact">
+      <h3>Contact Me</h3>
+      <p>
+        Email:
+        <a href="mailto:swael591@gmail.com">swael591@gmail.com</a>
+      </p>
+      <p>
+        <a href="#">LinkedIn</a> |
+        <a href="https://github.com/Sarah-Saqr/">GitHub</a>
+      </p>
+    </section>
+  </body>
+</html>
