@@ -3,18 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Sarah Saqr</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
       /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Poppins", sans-serif;
-        background-color: #0a0a0a; /* Near black background */
-        color: #e0e0e0; /* Light gray text */
+        background-color: #0a0a0a;
+        color: #e0e0e0;
         margin: 0;
         padding: 0;
         line-height: 1.6;
@@ -31,7 +36,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px 50px;
-        background: #0a0a0a; /* Near black */
+        background: #0a0a0a;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         position: sticky;
         top: 0;
@@ -41,7 +46,41 @@
       header h1 {
         font-size: 1.8rem;
         font-weight: 600;
-        color: #b388ff; /* Light purple accent */
+        color: #b388ff;
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #b388ff;
+        margin: 2px 0;
+        transition: all 0.3s ease;
+      }
+
+      /* Navigation */
+      .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+      }
+
+      nav {
+        transition: transform 0.3s ease;
       }
 
       nav ul {
@@ -51,13 +90,13 @@
       }
 
       nav ul li a {
-        color: #e0e0e0; /* Light gray */
+        color: #e0e0e0;
         font-weight: 500;
         transition: color 0.3s, transform 0.3s;
       }
 
       nav ul li a:hover {
-        color: #b388ff; /* Light purple accent */
+        color: #b388ff;
         transform: translateY(-2px);
       }
 
@@ -77,12 +116,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(10, 10, 10, 0.8); /* Dark overlay */
+        background: rgba(10, 10, 10, 0.8);
       }
 
       #hero h2 {
         font-size: 3.5rem;
-        color: #b388ff; /* Light purple accent */
+        color: #b388ff;
         margin-bottom: 10px;
         position: relative;
         z-index: 1;
@@ -91,28 +130,37 @@
 
       #hero p {
         font-size: 1.3rem;
-        color: #9e9e9e; /* Medium gray */
+        color: #9e9e9e;
         position: relative;
         z-index: 1;
         animation: fadeIn 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       /* Sections */
       section {
         padding: 80px 20px;
         text-align: center;
-        border-bottom: 2px solid #1a1a1a; /* Slightly lighter black */
+        border-bottom: 2px solid #1a1a1a;
       }
 
       section h3 {
         font-size: 2.5rem;
         margin-bottom: 30px;
-        color: #b388ff; /* Light purple accent */
+        color: #b388ff;
       }
 
       section p {
         font-size: 1.1rem;
-        color: #9e9e9e; /* Medium gray */
+        color: #9e9e9e;
         max-width: 800px;
         margin: 0 auto;
       }
@@ -125,13 +173,13 @@
         flex-wrap: wrap;
         gap: 20px;
         padding: 50px 20px;
-        background: #1a1a1a; /* Slightly lighter black */
+        background: #1a1a1a;
       }
 
       .skill,
       .tech-item {
-        background: #2d2d2d; /* Dark gray */
-        color: #b388ff; /* Light purple accent */
+        background: #2d2d2d;
+        color: #b388ff;
         padding: 15px 25px;
         border-radius: 8px;
         font-weight: 600;
@@ -147,12 +195,12 @@
       .skill:hover,
       .tech-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(179, 136, 255, 0.3); /* Purple shadow */
+        box-shadow: 0 5px 15px rgba(179, 136, 255, 0.3);
       }
 
       /* Projects */
       .project {
-        background: #1a1a1a; /* Slightly lighter black */
+        background: #1a1a1a;
         padding: 30px;
         margin: 20px auto;
         border-radius: 10px;
@@ -163,18 +211,18 @@
 
       .project:hover {
         transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(179, 136, 255, 0.3); /* Purple shadow */
+        box-shadow: 0 10px 20px rgba(179, 136, 255, 0.3);
       }
 
       .project h4 {
         font-size: 1.5rem;
         margin-bottom: 10px;
-        color: #b388ff; /* Light purple accent */
+        color: #b388ff;
       }
 
       .project p {
         font-size: 1rem;
-        color: #9e9e9e; /* Medium gray */
+        color: #9e9e9e;
         line-height: 1.8;
         text-align: left;
       }
@@ -187,7 +235,7 @@
 
       .project ul li {
         font-size: 0.95rem;
-        color: #9e9e9e; /* Medium gray */
+        color: #9e9e9e;
         margin-bottom: 10px;
       }
 
@@ -195,28 +243,18 @@
         display: inline-block;
         margin-top: 15px;
         padding: 10px 20px;
-        background: #b388ff; /* Light purple accent */
-        color: #0a0a0a; /* Near black */
+        background: #b388ff;
+        color: #0a0a0a;
         border-radius: 5px;
         font-weight: 500;
         transition: background 0.3s;
       }
 
       .project a:hover {
-        background: #9575cd; /* Darker purple */
+        background: #9575cd;
       }
 
-      /* Rest of the styles remain the same */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      /* Mockups Section */
+      /* Mockups */
       .mockups {
         display: flex;
         justify-content: center;
@@ -229,28 +267,71 @@
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s, box-shadow 0.3s;
-        object-fit: contain; /* Maintains aspect ratio */
-        height: auto; /* Allows height to adjust automatically */
+        object-fit: contain;
+        height: auto;
       }
 
       .mockups img:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(179, 136, 255, 0.3); /* Purple shadow */
+        box-shadow: 0 8px 20px rgba(179, 136, 255, 0.3);
       }
 
-      /* Responsive Design */
-
-      /* Responsive Design */
+      /* Mobile Styles */
       @media (max-width: 768px) {
         header {
-          flex-direction: column;
-          text-align: center;
           padding: 20px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-overlay.active {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          right: -250px;
+          width: 250px;
+          height: 100%;
+          background: #1a1a1a;
+          padding: 80px 20px 20px;
+          transition: right 0.3s ease;
+          z-index: 999;
+        }
+
+        nav.active {
+          right: 0;
         }
 
         nav ul {
           flex-direction: column;
-          gap: 10px;
+          gap: 20px;
+        }
+
+        nav ul li {
+          width: 100%;
+        }
+
+        nav ul li a {
+          display: block;
+          padding: 10px;
+          text-align: left;
+          font-size: 1.1rem;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
         }
 
         #hero h2 {
@@ -272,14 +353,11 @@
         .skill,
         .tech-item {
           width: 120px;
-          height: 50px;
         }
 
         .project {
           width: 90%;
         }
-
-        /* Previous media queries remain the same until mockups... */
 
         .mockups {
           flex-direction: column;
@@ -289,22 +367,25 @@
         .mockups img {
           max-width: 80%;
           margin-bottom: 20px;
-          height: auto; /* Ensures proper scaling on mobile */
         }
       }
     </style>
   </head>
-  <!-- Body content remains exactly the same -->
   <body>
     <header>
-      <h1>My Portfolio</h1>
+      <h1>Sarah Saqr</h1>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-overlay"></div>
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#tech-stack">Tech Stack</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -335,19 +416,14 @@
       <div class="skill">Interaction Design</div>
       <div class="skill">Figma</div>
       <div class="skill">Sketch</div>
-      <div class="skill">Adobe XD</div>
     </section>
 
     <section id="tech-stack">
       <h3>Tech Stack</h3>
       <div class="tech-item">Figma</div>
       <div class="tech-item">Sketch</div>
-      <div class="tech-item">Adobe XD</div>
-      <div class="tech-item">InVision</div>
       <div class="tech-item">ProtoPie</div>
       <div class="tech-item">Webflow</div>
-      <div class="tech-item">HTML/CSS</div>
-      <div class="tech-item">JavaScript</div>
     </section>
 
     <section id="projects">
@@ -427,7 +503,7 @@
         <p><strong>Key Features:</strong></p>
         <ul>
           <li>
-            Visually Engaging UI – Aesthetic design aligned with fashion trends
+            Visually Engaging UI – Aesthetic design aligned with fashiontrends
           </li>
           <li>
             Seamless Shopping Experience – Easy browsing, filtering, and
@@ -476,5 +552,33 @@
       </p>
       <p><a href="https://github.com/Sarah-Saqr">GitHub</a></p>
     </section>
+
+    <script>
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector("nav");
+      const overlay = document.querySelector(".nav-overlay");
+
+      function toggleMenu() {
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+        overlay.classList.toggle("active");
+        document.body.style.overflow = nav.classList.contains("active")
+          ? "hidden"
+          : "";
+      }
+
+      hamburger.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", toggleMenu);
+
+      // Close menu when clicking a link
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (nav.classList.contains("active")) {
+            toggleMenu();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
