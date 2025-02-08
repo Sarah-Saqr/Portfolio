@@ -13,8 +13,8 @@
       /* General Styles */
       body {
         font-family: "Poppins", sans-serif;
-        background-color: #0a192f; /* Navy blue background */
-        color: #ccd6f6; /* Light gray text */
+        background-color: #0a0a0a; /* Near black background */
+        color: #e0e0e0; /* Light gray text */
         margin: 0;
         padding: 0;
         line-height: 1.6;
@@ -31,7 +31,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px 50px;
-        background: #0a192f; /* Navy blue */
+        background: #0a0a0a; /* Near black */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         position: sticky;
         top: 0;
@@ -41,7 +41,7 @@
       header h1 {
         font-size: 1.8rem;
         font-weight: 600;
-        color: #64ffda; /* Teal accent */
+        color: #b388ff; /* Light purple accent */
       }
 
       nav ul {
@@ -51,19 +51,14 @@
       }
 
       nav ul li a {
-        color: #ccd6f6; /* Light gray */
+        color: #e0e0e0; /* Light gray */
         font-weight: 500;
         transition: color 0.3s, transform 0.3s;
       }
 
       nav ul li a:hover {
-        color: #64ffda; /* Teal accent */
+        color: #b388ff; /* Light purple accent */
         transform: translateY(-2px);
-      }
-
-      /* Smooth Scroll Animation */
-      html {
-        scroll-behavior: smooth;
       }
 
       /* Hero Section */
@@ -82,12 +77,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(10, 25, 47, 0.8); /* Dark overlay */
+        background: rgba(10, 10, 10, 0.8); /* Dark overlay */
       }
 
       #hero h2 {
         font-size: 3.5rem;
-        color: #64ffda; /* Teal accent */
+        color: #b388ff; /* Light purple accent */
         margin-bottom: 10px;
         position: relative;
         z-index: 1;
@@ -96,37 +91,28 @@
 
       #hero p {
         font-size: 1.3rem;
-        color: #8892b0; /* Lighter gray */
+        color: #9e9e9e; /* Medium gray */
         position: relative;
         z-index: 1;
         animation: fadeIn 2s ease-in-out;
       }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
       /* Sections */
       section {
-        padding: 80px 20px; /* Adjusted padding */
+        padding: 80px 20px;
         text-align: center;
-        border-bottom: 2px solid #112240; /* Darker navy blue */
+        border-bottom: 2px solid #1a1a1a; /* Slightly lighter black */
       }
 
       section h3 {
         font-size: 2.5rem;
         margin-bottom: 30px;
-        color: #64ffda; /* Teal accent */
+        color: #b388ff; /* Light purple accent */
       }
 
       section p {
         font-size: 1.1rem;
-        color: #8892b0; /* Lighter gray */
+        color: #9e9e9e; /* Medium gray */
         max-width: 800px;
         margin: 0 auto;
       }
@@ -139,19 +125,19 @@
         flex-wrap: wrap;
         gap: 20px;
         padding: 50px 20px;
-        background: #112240; /* Darker navy blue */
+        background: #1a1a1a; /* Slightly lighter black */
       }
 
       .skill,
       .tech-item {
-        background: #233554; /* Dark blue */
-        color: #64ffda; /* Teal accent */
+        background: #2d2d2d; /* Dark gray */
+        color: #b388ff; /* Light purple accent */
         padding: 15px 25px;
         border-radius: 8px;
         font-weight: 600;
         transition: transform 0.3s, box-shadow 0.3s;
-        width: 150px; /* Fixed width */
-        height: 50px; /* Fixed height */
+        width: 150px;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -161,34 +147,34 @@
       .skill:hover,
       .tech-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3); /* Teal shadow */
+        box-shadow: 0 5px 15px rgba(179, 136, 255, 0.3); /* Purple shadow */
       }
 
       /* Projects */
       .project {
-        background: #112240; /* Darker navy blue */
+        background: #1a1a1a; /* Slightly lighter black */
         padding: 30px;
         margin: 20px auto;
         border-radius: 10px;
         width: 80%;
-        max-width: 800px; /* Slightly wider for better readability */
+        max-width: 800px;
         transition: transform 0.3s, box-shadow 0.3s;
       }
 
       .project:hover {
         transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3); /* Teal shadow */
+        box-shadow: 0 10px 20px rgba(179, 136, 255, 0.3); /* Purple shadow */
       }
 
       .project h4 {
         font-size: 1.5rem;
         margin-bottom: 10px;
-        color: #64ffda; /* Teal accent */
+        color: #b388ff; /* Light purple accent */
       }
 
       .project p {
         font-size: 1rem;
-        color: #8892b0; /* Lighter gray */
+        color: #9e9e9e; /* Medium gray */
         line-height: 1.8;
         text-align: left;
       }
@@ -201,7 +187,7 @@
 
       .project ul li {
         font-size: 0.95rem;
-        color: #8892b0; /* Lighter gray */
+        color: #9e9e9e; /* Medium gray */
         margin-bottom: 10px;
       }
 
@@ -209,15 +195,25 @@
         display: inline-block;
         margin-top: 15px;
         padding: 10px 20px;
-        background: #64ffda; /* Teal accent */
-        color: #0a192f; /* Navy blue */
+        background: #b388ff; /* Light purple accent */
+        color: #0a0a0a; /* Near black */
         border-radius: 5px;
         font-weight: 500;
         transition: background 0.3s;
       }
 
       .project a:hover {
-        background: #52d1b2; /* Darker teal */
+        background: #9575cd; /* Darker purple */
+      }
+
+      /* Rest of the styles remain the same */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       /* Mockups Section */
@@ -229,16 +225,20 @@
       }
 
       .mockups img {
-        max-width: 30%; /* Adjust width to fit 3 images in a row */
+        max-width: 30%;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s, box-shadow 0.3s;
+        object-fit: contain; /* Maintains aspect ratio */
+        height: auto; /* Allows height to adjust automatically */
       }
 
       .mockups img:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3); /* Teal shadow */
+        box-shadow: 0 8px 20px rgba(179, 136, 255, 0.3); /* Purple shadow */
       }
+
+      /* Responsive Design */
 
       /* Responsive Design */
       @media (max-width: 768px) {
@@ -271,26 +271,30 @@
 
         .skill,
         .tech-item {
-          width: 120px; /* Adjusted for smaller screens */
-          height: 50px; /* Keep height consistent */
+          width: 120px;
+          height: 50px;
         }
 
         .project {
-          width: 90%; /* Wider on smaller screens */
+          width: 90%;
         }
 
+        /* Previous media queries remain the same until mockups... */
+
         .mockups {
-          flex-direction: column; /* Stack images vertically on smaller screens */
+          flex-direction: column;
           align-items: center;
         }
 
         .mockups img {
-          max-width: 80%; /* Full width on smaller screens */
-          margin-bottom: 20px; /* Add spacing between stacked images */
+          max-width: 80%;
+          margin-bottom: 20px;
+          height: auto; /* Ensures proper scaling on mobile */
         }
       }
     </style>
   </head>
+  <!-- Body content remains exactly the same -->
   <body>
     <header>
       <h1>My Portfolio</h1>
@@ -387,7 +391,6 @@
           planning while maintaining a visually engaging and functional design.
         </p>
 
-        <!-- Mockups Section -->
         <div class="mockups">
           <img
             src="images/yourglobaltrip/mockup1.png"
@@ -405,21 +408,62 @@
 
         <a href="#">View Project</a>
       </div>
+
       <div class="project">
-        <h4>E-Commerce Redesign</h4>
+        <h4>AALAA Designs</h4>
         <p>
-          Redesigned the user interface and improved the user experience for a
-          leading e-commerce platform, resulting in a 30% increase in user
-          engagement.
+          AALAA Designs is a modern e-commerce website for a fashion brand based
+          in Egypt, specializing in women's clothing. The platform offers a
+          seamless shopping experience, allowing customers to browse
+          collections, explore styles, and purchase effortlessly.
         </p>
-        <a href="#">View Project</a>
-      </div>
-      <div class="project">
-        <h4>Mobile Banking App</h4>
+        <p><strong>Design Approach:</strong></p>
         <p>
-          Designed a mobile banking app with a focus on simplicity and security,
-          making financial transactions easier for users.
+          I crafted a clean, elegant, and user-friendly interface that reflects
+          the brand's aesthetic. The design ensures a smooth shopping journey
+          with intuitive navigation, engaging visuals, and a responsive layout
+          for both desktop and mobile users.
         </p>
+        <p><strong>Key Features:</strong></p>
+        <ul>
+          <li>
+            Visually Engaging UI – Aesthetic design aligned with fashion trends
+          </li>
+          <li>
+            Seamless Shopping Experience – Easy browsing, filtering, and
+            checkout process
+          </li>
+          <li>
+            Mobile-First Approach – Fully responsive for a smooth mobile
+            experience
+          </li>
+          <li>
+            Brand Identity Integration – Elegant typography and color scheme to
+            enhance branding
+          </li>
+        </ul>
+        <p><strong>Impact:</strong></p>
+        <p>
+          This project enhances online shopping for AALAA Designs, creating a
+          stylish and functional e-commerce platform that elevates the brand's
+          digital presence.
+        </p>
+
+        <div class="mockups">
+          <img
+            src="images/aalaadesigns/mockup1.png"
+            alt="AALAA Designs Mockup 1"
+          />
+          <img
+            src="images/aalaadesigns/mockup2.png"
+            alt="AALAA Designs Mockup 2"
+          />
+          <img
+            src="images/aalaadesigns/mockup3.png"
+            alt="AALAA Designs Mockup 3"
+          />
+        </div>
+
         <a href="#">View Project</a>
       </div>
     </section>
@@ -430,7 +474,7 @@
         Email:
         <a href="mailto:swael591@gmail.com">swael591@gmail.com</a>
       </p>
-      <p><a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+      <p><a href="https://github.com/Sarah-Saqr">GitHub</a></p>
     </section>
   </body>
 </html>
